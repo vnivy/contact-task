@@ -1,0 +1,271 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css
+        "
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <title></title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="sidebar">
+      <li>
+        <i class="fa fa-bars icons pb-5 pt-3" aria-hidden="true"></i>
+      </li>
+      <li>
+        <i class="fa fa-home icons pb-4" aria-hidden="true"></i>
+      </li>
+      <li>
+        <i class="fa fa-user-o icons pb-4" aria-hidden="true"></i>
+      </li>
+      <li>
+        <i class="fa fa-file-text-o icons pb-4" aria-hidden="true"></i>
+      </li>
+      <li>
+        <i class="fa fa-clock-o icons pb-4" aria-hidden="true"></i>
+      </li>
+      <li>
+        <i class="fa fa-trash-o icons pb-4" aria-hidden="true"></i>
+      </li>
+      <li>
+        <i class="fa fa-calendar icons" aria-hidden="true"></i>
+      </li>
+    </div>
+
+    <div class="container">
+      <nav class="navbar navbar-expand-lg pt-0 pb-0">
+        <a class="navbar-brand"
+          ><i class="fa fa-search pl-5" aria-hidden="true"></i
+        ></a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto"></ul>
+          <li class="nav-item">
+            <a class="nav-link">+ Add</a>
+          </li>
+          <li><i class="fa fa-envelope-o" aria-hidden="true"></i></li>
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              id="navbarDropdown"
+              role="button"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              Mark Henry
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </li>
+          <li><i class="fa fa-bell-o" aria-hidden="true"></i></li>
+        </div>
+      </nav>
+    </div>
+    <div class="line"></div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 pl-4 pb-4">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="row">
+                <div class="col-md-1 mt-3">
+                  <i class="fa fa-address-book-o" aria-hidden="true"></i>
+                </div>
+                <div class="col-md-3">
+                  <p class="heading1 mb-0">Contacts</p>
+                  <p class="content">welcome to Flatcrm contact page</p>
+                </div>
+                <div class="col-md-8 mt-3">
+                  <p>
+                    <button onclick="sortTable()" class="button1">Sort</button>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <input
+            type="text"
+            id="myInput"
+            onkeyup="myFunction()"
+            placeholder="Search for names.."
+            title="Type in a name"
+            class="required searchbox"
+          />
+          <input
+            type="button"
+            value="Delete Rows"
+            class="button ml-4"
+            onclick="deleteRows()"
+          />
+          <button type="button" class="button ml-3" onclick="openForm()">
+            + Add Contact
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="row">
+            <div class="col-md-6">
+              <form name="Form1">
+                <table id="myTable" class="mt-5">
+                  <tr class="heading">
+                    <th>Basic Info</th>
+                    <th>Company</th>
+                    <th>check</th>
+                    <th><i class="fa fa-plus" aria-hidden="true"></i></th>
+                    <th>
+                      <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                    </th>
+                  </tr>
+
+                  <tr>
+                    <td>David</td>
+                    <td>doodleblue</td>
+                    <td><input type="checkbox" name="delBox" /></td>
+                    <td>
+                      <button
+                        type="button"
+                        class="openbutton btn1 pt-1"
+                        onclick="openForm1()"
+                      >
+                        <i class="fa fa-eye" aria-hidden="true"></i>
+                      </button>
+                    </td>
+                    <td>
+                      <button
+                        type="submit"
+                        class="openbutton btn1 pt-1"
+                        onclick="openForm()"
+                      >
+                        <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                      </button>
+                    </td>
+                  </tr>
+                </table>
+              </form>
+            </div>
+            <div class="col-md-6">
+              <div class="form-popup1" id="myForm">
+                <form class="form-container">
+                  <div class="form1">
+                    <h2>Add Contact</h2>
+                    <label for="name"><b>Basic Info</b></label>
+                    <input
+                      type="text"
+                      placeholder="Enter Name"
+                      id="basicinfo"
+                      name="name"
+                      required
+                    />
+
+                    <label for="psw"><b>Company</b></label>
+                    <input
+                      type="text"
+                      placeholder="Enter Company"
+                      id="company"
+                      name="company"
+                      required
+                    />
+
+                    <input
+                      type="submit"
+                      class="button"
+                      id="submit"
+                      value="create"
+                      onclick="event.preventDefault();Submit();"
+                    />
+                    <button
+                      type="button"
+                      class="button cancel"
+                      onclick="closeForm()"
+                    >
+                      Close
+                    </button>
+                  </div>
+                </form>
+              </div>
+              <div class="form-popup" id="Form">
+                <div class="row">
+                  <div class="col-md-7 details mt-5">
+                    <img src="images/name2.png" class="image mt-2" />
+                    <p class="contact mb-0 pt-2">David</p>
+                    <p class="content">Project manager @FlatCRM management</p>
+                    <table class="table center">
+                      <tbody>
+                        <tr>
+                          <th>Fullname:</th>
+                          <td>David</td>
+                        </tr>
+                        <tr>
+                          <th>Email:</th>
+                          <td>david@gmail.com</td>
+                        </tr>
+                        <tr>
+                          <th>Phone:</th>
+                          <td>9940610921</td>
+                        </tr>
+
+                        <tr>
+                          <th>Company:</th>
+                          <td>Doodleblue</td>
+                        </tr>
+                        <tr>
+                          <th>Address:</th>
+                          <td>47,west pirebag road</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <button
+                      type="button"
+                      class="btn cancel mb-2"
+                      onclick="closeForm1()"
+                    >
+                      Close
+                    </button>
+                    <button
+                      type="button"
+                      class="btn cancel mb-2"
+                      onclick="close()"
+                    >
+                      edit
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/javascript.js"></script>
+  </body>
+</html>
